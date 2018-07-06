@@ -40,9 +40,24 @@ TEXTO;
         echo '<br>';
         //Variables superglobales
         //
-            //$_SERVER
-        echo 'programa actual: '.$_SERVER['PHP_SELF'].'<br>';
-        echo 'IP actual: '.$_SERVER['SERVER_ADDR'];
+        $datos = $_SERVER;
+        echo 'programa actual: '.$datos['PHP_SELF'].'<br>';
+        echo 'IP actual: '.$datos['SERVER_ADDR'].'<br>';
+        echo 'Direectorio: '.$datos['PHP_SELF'].'<br>';
+        echo 'Nombre servidor: '.$datos['SERVER_NAME'].'<br>';
+        echo 'IP Usuario: '.$datos['REMOTE_ADDR'];
+        echo '<br>GET: ';// Usar Proyecto1/index.php?v1=hola
+        foreach ($_GET as $param) {
+            echo $param. ' || ';
+        }
+        $array = getdate();
+        if ($array[0]%2==0) {goto salto;}
+        elseif ($datos['REMOTE_ADDR']='127.0.0.1') {
+            echo '<h3>Estás aquí</h3>';
+        }else echo '<h3>No estás aquí<h3>';
+        echo '<h3>Segundos impares</h3>';
+        salto:
+            echo ('fin '.$array[0]);
         ?>
     </body>
 </html>
