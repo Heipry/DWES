@@ -39,6 +39,7 @@ TEXTO;
         }
         echo '<br>';
         //Variables superglobales
+        //
             //$_SERVER
         echo 'programa actual: '.$_SERVER['PHP_SELF'];
         
