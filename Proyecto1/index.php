@@ -41,8 +41,8 @@ TEXTO;
         //Variables superglobales
         //
             //$_SERVER
-        echo 'programa actual: '.$_SERVER['PHP_SELF'];
-        
+        echo 'programa actual: '.$_SERVER['PHP_SELF'].'<br>';
+        echo 'IP actual: '.$_SERVER['SERVER_ADDR'];
         ?>
     </body>
 </html>
