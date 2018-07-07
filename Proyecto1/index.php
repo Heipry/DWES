@@ -52,12 +52,40 @@ TEXTO;
         }
         $array = getdate();
         if ($array[0]%2==0) {goto salto;}
-        elseif ($datos['REMOTE_ADDR']='127.0.0.1') {
+        elseif ($datos['REMOTE_ADDR']=='127.0.0.1') {
             echo '<h3>Estás aquí</h3>';
         }else echo '<h3>No estás aquí<h3>';
         echo '<h3>Segundos impares</h3>';
         salto:
-            echo ('fin '.$array[0]);
+            echo ('fin '.$array[0].'<br>');
+    switch (count($_GET)) {
+    case 0:
+        echo 'La página venia limpia';
+
+                    break;
+
+    default:
+        echo 'La página traía parametros: ';
+        break;
+    }
+    // Bucles
+    $cuenta = 0;
+    while ($cuenta <= 5) {
+        echo $cuenta.'<br>';
+        $cuenta++;            
+    }
+    do {
+    echo 'Esto se ejecuta al menos una vez<br>';
+} while ($cuenta<5);
+    for ($i = 0; $i <= 10; $i++) {
+        if ($i==3) {   //Si es 3 saltamos al siguiente         
+            continue;            
+        }
+        echo $i.'<br>';
+        if ($i==5) { //Si es 5 salimos
+            break;
+        }
+    }
         ?>
     </body>
 </html>
