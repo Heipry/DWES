@@ -1,5 +1,4 @@
 <?php
-
 $autor = "Javier Díaz";
 ?>
 
