@@ -22,7 +22,7 @@
              *  si no se ha enviado mostramos el formulario
              */
         $mensaje = 0;
-        if (!empty($_POST['name']) && !empty($_POST['name'])){
+        if (!empty($_POST['name']) && !empty($_POST['ciclo'])){
             echo 'Su nombre: '.$_POST['name'].' y ciclo: '.$_POST['ciclo'].' han sido recogidos';
              $mensaje = 0;
         }else{       
