@@ -95,7 +95,17 @@
         function anadirOtroApellido (&$nombre){//Parametro por referencia
             $nombre .= ' Gutierrez';
         }
-        
+        // Gestión de errores
+        try {
+            $num = 5;
+            $zero = 0;
+            if ($zero==0) {
+                throw new Exception("División por 0");
+            }
+            echo $num/$zero;
+        } catch (Exception $ex) {
+            echo "Se produce un error: ".$ex->getMessage()."<br>";
+        }
         ?>
     </body>
 </html>
