@@ -20,6 +20,7 @@ and open the template in the editor.
         $dwes = new mysqli('localhost', 'dwes', 'abc123.', 'dwes');
         // @ ignora errores
         $error = $dwes->connect_errno;
+        $errorMensaje = $dwes->connect_error;
         if ($error!=0) {
             echo $error. " | ". $dwes->connect_error;
         }  else {
@@ -44,10 +45,12 @@ and open the template in the editor.
             $sql = 'UPDATE stock SET unidades=1 WHERE producto="3DSNG" AND tienda=1';
             if ($dwes->query($sql) != true) {
                 $todo_bien = false;
+                echo 'Error en update';
             }
             $sql = 'INSERT INTO `stock` (`producto`, `tienda`, `unidades`) VALUES ("3DSNG", 3,1)';
             if ($dwes->query($sql) != true) {
                 $todo_bien = false;
+                echo 'Error en insert';
             }
             // Si todo fue bien, confirmamos los cambios
             // y en caso contrario los deshacemos
@@ -60,8 +63,39 @@ and open the template in the editor.
             }
             $consulta = $dwes->real_query('UPDATE stock SET unidades = 1 WHERE '
                     . 'producto = "3DSNG" AND tienda =1');
-            $dwes->close();
-            
+            $consulta2 = 'SELECT producto, unidades FROM stock';
+            $resul = $dwes->query($consulta2, MYSQLI_STORE_RESULT);
+            $stock = $resul->fetch_array();
+            do{
+                
+                echo '<br>'.$stock[0];
+                echo ' : '.$stock[1];  
+                $stock = $resul->fetch_array();              
+            }while ($stock!=null);  
+
+            // consultas preparadas (para ejecutar más de una vez)
+            $cons = $dwes->stmt_init();
+            $i =2;
+            echo "<br>Tienda $i :";
+
+            $cons->prepare("SELECT nombre FROM tienda where cod = ? ");
+            $cons->bind_param('i', $i);
+            $cons->execute();            
+            $cons->bind_result($ntienda);
+            $cons->fetch();
+            echo '<br>'.$ntienda;
+            $i =1;
+            echo "<br>Tienda $i :";
+            $cons->bind_param('i', $i);
+            $cons->execute();            
+            $cons->bind_result($ntienda);
+            $cons->fetch();
+            echo '<br>'.$ntienda;
+            $cons->close();
+
+
+
+            $dwes->close();            
         }
         echo '<p>Pagina index</p>';
         ?>
