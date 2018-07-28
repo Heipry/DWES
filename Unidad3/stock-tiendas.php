@@ -19,19 +19,30 @@
     <div id="encabezado">
         <h1>Ejercicio: Conjuntos de resultados en MySQLi</h1>
         <?php 
+                $mensaje="";
                 $dwes = new mysqli('localhost', 'dwes', 'abc123.', 'dwes');
                 $error = $dwes->connect_errno;
                 if ($error!=0) {
-                    $mensaje = "Se produjo un error: ". $error. " | ". $dwes->connect_error;
+                    $mensaje .= "Se produjo un error: ". $error. " | ". $dwes->connect_error.'<br>';
                 }else{
                     if (isset($_GET['id'])){
                         $consultaC = $dwes->stmt_init();
+                       // print_r($_GET);
+                        
+                        $consultaC->prepare("UPDATE stock SET unidades = ? WHERE producto = ? AND tienda =  ?");
+                        $consultaC->bind_param('isi', $uni, $prod, $tienda);
                         $uni = $_GET['stock'];
+                        if ($uni>0) {
+                            $uni=$uni-1;
+                        }else{
+                            $mensaje .= "No hay stock que restar<br>";
+                        }
                         $prod = $_GET['id'];
                         $tienda = $_GET['tienda'];
-                        echo $uni.$tienda.$prod;
-                        $consultaC->prepare("UPDATE stock SET unidades = ? WHERE producto = \'?\'AND tienda =  ?");
-                        $consultaC->bind_param('isi', $uni,$prod,$tienda);
+                        //echo $uni.$tienda.$prod;
+                        $consultaC->execute();
+                        $mensaje .= $consultaC->affected_rows. " fila/s cambiada/s.<br>";
+                        //printf("%d filas cambiadas.\n", $consultaC->affected_rows);
                         $consultaC->close();
                     }
         ?>
@@ -41,9 +52,12 @@
                     $consulta = 'SELECT distinct producto FROM stock';
                     $resul = $dwes->query($consulta, MYSQLI_USE_RESULT);
                     $producto= $resul->fetch_array();
+                    if (isset($_POST['productos']) || isset($_GET['id'])) {
+                    $productoAnt = (isset($_POST['productos'])) ? $_POST['productos'] : $_GET['id'];
+                    }else $productoAnt == '';
                     do{
                         $selec = '';
-                        if (isset($_POST['productos']) && $_POST['productos']==$producto[0]) $selec = "selected";
+                        if ($productoAnt==$producto[0]) $selec = "selected";
                         echo '<option '.$selec.' value="'.$producto[0].'">'.$producto[0].'</option>';
                         $producto= $resul->fetch_array();            
                     }while ($producto!=null); 
@@ -67,13 +81,19 @@
                 $stock = $stocks->fetch_array();
                 $stockNum = (is_null($stock[0])) ? 0: $stock[0];
                 echo "<p>Stock en tienda $tienda[1] de $producto: $stockNum productos</p>";  
-                echo '<p>Cambiar stock a:';
+               
             ?>
             <form id="form_action" action="<?php echo $_SERVER['PHP_SELF'];?>" method="get">
             <input type="hidden" value="<?php  echo $producto ?>" name='id'>
             <input type="hidden" value="<?php  echo $tienda[0] ?>" name ='tienda'>
-            <input type="number" value="<?php  echo $stockNum ?>" name='stock'>
-            <button type="submit">Modificar stock</button> 
+            <?php
+                        if ($stockNum > 0) {
+            ?> 
+            <input type="hidden" value="<?php  echo $stockNum ?>" name='stock'>
+            <button type="submit">Disminuir stock en 1</button> 
+            <?php 
+                        }
+            ?>
             </form>
             <?php     
                 $tienda= $tiendas->fetch_array();         
