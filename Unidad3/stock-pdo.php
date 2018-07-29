@@ -66,8 +66,11 @@
     </div>
     <div id="pie">
         <?php 
-            if (isset($mensaje)) echo $mensaje;
-         ?>
+            unset($dwes);
+            if (isset($mensaje)) {
+            echo $mensaje;
+        }
+        ?>
     </div>
 </body>
 </html>

@@ -30,11 +30,23 @@ and open the template in the editor.
             print_r($fila);       
             
         }
-        $ejer = $dwes->query("SELECT * FROM tienda");
-        echo '<br>';
-        echo gettype($ejer);
-        echo $ejer;
-        
+
+        // Consultas preparadas
+        $cons = $dwes->prepare('INSERT INTO stock (producto, tienda, unidades) VALUES (:pr, :ti, :uni)');
+        $produc = 'ACERAX3950';
+        $tien = 2;
+        $u = 0;
+        $cons->bindParam(":pr", $produc);
+        $cons->bindParam(":ti", $tien);
+        $cons->bindParam(":uni", $u);
+        $salida1=$cons->execute();
+        $salida2=$cons->execute(array(":pr"=>"ACERAX3950", ":ti"=>3,":uni"=>0));
+        if ($salida1) {
+            echo "1 bien";
+        } else echo '1 mal';
+        if ($salida2) {
+            echo "2 bien";
+        } else echo '2 mal';
         ?>
     </body>
 </html>
