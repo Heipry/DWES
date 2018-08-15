@@ -1,0 +1,412 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"_SE",
+				"_SESSION"
+			],
+			[
+				"sess",
+				"session_start"
+			],
+			[
+				"date_def",
+				"date_default_timezone_set"
+			],
+			[
+				"PHP",
+				"PHP_AUTH_PW"
+			],
+			[
+				"mi",
+				"miCoche"
+			],
+			[
+				"li",
+				"litros"
+			],
+			[
+				"parse",
+				"parseInt\t( s: string, radix: int ): int Global"
+			],
+			[
+				"isF",
+				"isFinite\t( n: double ): boolean Global"
+			],
+			[
+				"encode",
+				"encodeURIComponent\t( uriComponent: string ): string Global"
+			],
+			[
+				"encodeU",
+				"encodeURI\t( uri: string ): string Global"
+			],
+			[
+				"imp",
+				"imprimir"
+			],
+			[
+				"for",
+				"for_in"
+			],
+			[
+				"writ",
+				"write\t( text_..: DOMString ): void Document"
+			],
+			[
+				"va",
+				"valueOf\t(): number Date"
+			],
+			[
+				"console",
+				"console_log"
+			],
+			[
+				"semana",
+				"semanaC"
+			],
+			[
+				"spli",
+				"splice\t( start: int, deleteCount: int, items_..: any ): Array Array"
+			],
+			[
+				"conso",
+				"console_log"
+			],
+			[
+				"seman",
+				"semanaC"
+			],
+			[
+				"conc",
+				"concat\t( items_..: any ): string Array"
+			],
+			[
+				"sema",
+				"semanaC"
+			],
+			[
+				"sp",
+				"splice\t( start: int, deleteCount: int, items_..: any ): Array Array"
+			],
+			[
+				"otr",
+				"otroArray"
+			],
+			[
+				"each",
+				"forEach\t( callbackfn: Function, thisArg?: any ): Array Array"
+			],
+			[
+				"wr",
+				"write\t( text_..: DOMString ): void Document"
+			],
+			[
+				"cons",
+				"console_log"
+			],
+			[
+				"le",
+				"length\t: unsigned long Window"
+			],
+			[
+				"border-bot",
+				"border-bottom-style\tproperty"
+			],
+			[
+				"border-top",
+				"border-top-style\tproperty"
+			],
+			[
+				"border",
+				"border-style\tproperty"
+			],
+			[
+				"marg",
+				"margin-bottom\tproperty"
+			],
+			[
+				"margin",
+				"margin-right\tproperty"
+			],
+			[
+				"mar",
+				"margin\tproperty"
+			],
+			[
+				"m",
+				"margin\tproperty"
+			],
+			[
+				"text",
+				"text-center"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git ad",
+				"Git: Add All"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html5"
+			],
+			[
+				"Package Control: r",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control:inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 136.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			" import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/var/www/html/DWES/Unidad4/cerrar.php",
+		"/var/www/html/DWES/Unidad4/sessions.php",
+		"/var/www/html/DWES/Unidad4/cookies.php",
+		"/var/www/html/DWES/Unidad4/index2.php",
+		"/var/www/html/DWES/Unidad4/unidad4DWES.sublime-project",
+		"/etc/php/7.0/apache2/php.ini",
+		"/var/www/html/DWES/Unidad4/cookies2.php",
+		"/home/javier/Escritorio/html/DWEC/ventana.html",
+		"/home/javier/Escritorio/html/DWEC/funciones-tema4.html",
+		"/home/javier/Escritorio/html/DWEC/objetos-tema4.html",
+		"/home/javier/Escritorio/html/DWEC/arrays-tema4.html",
+		"/home/javier/Escritorio/html/DWES/Unidad4/.htaccess",
+		"/var/www/html/seguro/leeme.txt",
+		"/home/javier/scripts/mensajes.txt",
+		"/home/javier/.config/sublime-text-3/Packages/User/html5.sublime-snippet",
+		"/home/javier/Escritorio/html/php.php",
+		"/etc/my.cnf",
+		"/home/javier/.my.cnf",
+		"/etc/samba/smb.conf",
+		"/etc/profile",
+		"/etc/environment",
+		"/home/javier/Escritorio/html/DWES/seguridad/tema03/datosBDPDO.php",
+		"/home/javier/enviar",
+		"/etc/mysql/my.cnf",
+		"/home/javier/.config/sublime-text-3/Packages/Color Highlighter/ColorHighlighter.sublime-settings",
+		"/home/javier/.config/sublime-text-3/Packages/AutoFileName/autofilename.sublime-settings",
+		"/home/javier/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/javier/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/javier/Escritorio/html/javierdiaz.jadigar.com/index.php",
+		"/home/javier/Escritorio/html/javierdiaz.jadigar.com/assets/css/style.css",
+		"/home/javier/Escritorio/html/javierdiaz.jadigar.com/assets/php/sendemail.php",
+		"/tmp/fz3temp-1/index.php",
+		"/home/javier/Escritorio/xampp.sh",
+		"/home/javier/Escritorio/html/DWES/Unidad3/dwes.sql",
+		"/home/javier/Escritorio/html/conexion/conexion.inc.php",
+		"/home/javier/scripts/php5.6.sh",
+		"/home/javier/scripts/php7.2.sh",
+		"/home/javier/Escritorio/html/javierdiaz.jadigar.com/back/conexion/conexion.inc.php",
+		"/home/javier/Escritorio/html/javierdiaz.jadigar.com/assets/bootstrap/css/bootstrap.css",
+		"/etc/php/7.2/apache2/php.ini",
+		"/etc/php/5.6/apache2/php.ini",
+		"/home/javier/scripts/lamp-status.sh",
+		"/etc/apache2/apache2.conf",
+		"/home/javier/scripts/php7.0.sh",
+		"/tmp/mozilla_javier0/localhost.sql",
+		"/home/javier/Escritorio/lampp/phpmyadmin/config.inc.php"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 138.0
+	},
+	"pinned_build_system": "",
+	"project": "unidad4DWES.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
