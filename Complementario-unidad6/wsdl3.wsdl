@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Servicio" 
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="http://127.0.0.1/DWES/Complementario-unidad6/">
+	<wsdl:types>
+    <xsd:schema targetNameSpace="http://127.0.0.1/DWES/Complementario-unidad6" >
+    <xsd:complexType name="stringArray">
+      <xsd:complexContent>
+        <xsd:restriction base="soapenc:Array">
+          <xsd:attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:string[]" />
+        </xsd:restriction>
+      </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="usuario">
+     <xsd:all>
+      <xsd:element name="id" type="xsd:int" />
+      <xsd:element name="nombre" type="xsd:string" />
+      <xsd:element name="direccion" type="xsd:string" />
+      <xsd:element name="email" type="xsd:string" />
+    </xsd:all>
+    </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types> 
+   
+  <wsdl:message name="entradaSaludar">
+    <wsdl:part name="operando1" type="xsd:string" />
+  </wsdl:message>
+ 
+  <wsdl:message name="salidaSaludar">
+    <wsdl:part name="respuesta" type="xsd:string" />
+  </wsdl:message>
+
+  <wsdl:message name="salidaRetornarArray">
+    <wsdl:part name="vector" type="xsd:stringArray" />
+  </wsdl:message>
+
+  <wsdl:message name="entradaObjetos">
+    <wsdl:part name="objetoUsuario" type="tns:usuario" />
+  </wsdl:message>
+ 
+  <wsdl:message name="salidaObjetos">
+    <wsdl:part name="idUsuario" type="xsd:int" />
+  </wsdl:message>
+
+  <wsdl:portType name="Operaciones">
+    <wsdl:operation name="saludar">
+      <wsdl:input message="tns:entradaSaludar" />
+      <wsdl:output message="tns:salidaSaludar" />
+    </wsdl:operation>
+    <wsdl:operation name="retornarArray">
+      <wsdl:output message="tns:salidaRetornarArray" />
+    </wsdl:operation>
+    <wsdl:operation name="objetos">
+      <wsdl:input message="tns:entradaObjetos" />
+      <wsdl:output message="tns:salidaObjetos" />
+    </wsdl:operation>
+  </wsdl:portType>
+ 
+  <wsdl:binding name="Enlace" type="tns:Operaciones">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="saludar">
+        <soap:operation soapAction="http://127.0.0.1/DWES/Complementario-unidad6/soapServidor1.php?method=saludar" />
+        <wsdl:input>
+          <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </wsdl:input>
+        <wsdl:output>
+          <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retornarArray">
+        <soap:operation soapAction="http://127.0.0.1/DWES/Complementario-unidad6/soapServidor1.php?method=retornarArray" />
+        <wsdl:output>
+          <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="objetos">
+        <soap:operation soapAction="http://127.0.0.1/DWES/Complementario-unidad6/soapServidor1.php?method=objetos" />
+        <wsdl:input>
+          <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </wsdl:input>
+        <wsdl:output>
+          <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+ 
+  <wsdl:service name="ServicioWeb">
+    <wsdl:port name="Operaciones" binding="tns:Enlace">
+      <soap:address location="http://127.0.0.1/DWES/Complementario-unidad6/soapServidor3.php" />
+    </wsdl:port>
+  </wsdl:service>
+
+</wsdl:definitions>
